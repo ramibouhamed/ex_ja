@@ -22,20 +22,9 @@ input[type=text], select {
   margin: 4px 2px;
   cursor: pointer;
 }
-input[type=submit] {
-  width: 100%;
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
 
-input[type=submit]:hover {
-  background-color: #45a049;
-}
+
+
 
 div {
   border-radius: 5px;
@@ -50,18 +39,18 @@ div {
 <div>
   
     <label>C</label>
-    <input type="text" id="C" onkeydown="CtoF()" placeholder="enter C value">
+    <input type="text" id="C" oninput="CtoF()" placeholder="enter C value">
 
     <label>F</label>
-    <input type="text" id="F" onkeydown="FtoC()" placeholder="enter F value">
+    <input type="text" id="F" oninput="FtoC()" placeholder="enter F value">
 
-    <button class="button" onclick="CtoF()">C to F</button>
-    <button class="button" onclick="FtoC()">F to C</button>
+
 
 </div>
 <script>
     function CtoF() {
-      document.getElementById("F").value = (document.getElementById("C").value*9/5);
+      console.log("c = " + document.getElementById("C").value );
+      document.getElementById("F").value = (document.getElementById("C").value*9/5)+32;
     }
     function FtoC() {
       document.getElementById("C").value = (document.getElementById("F").value-32)*5/9;
